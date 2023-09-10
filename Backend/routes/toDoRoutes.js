@@ -58,7 +58,8 @@ router.patch('/', (req, res) => {
 
 router.get('/', (req, res) => {
     toDo.find().then((items) => {
-        res.json(items);
+        console.log('items found: ', items)
+        res.send(items);
     }).catch(err => {
         console.log('error while getting toDoList', err);
         res.status(500).send();

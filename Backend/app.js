@@ -8,15 +8,15 @@ app.use(express.urlencoded({ extended: true }));
 const db = require('./config/db');
 const toDoRoutes = require('./routes/toDoRoutes');
 db.connect();
+const cors = require('cors');
+app.use(cors());
 app.use('/toDo', toDoRoutes);
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Header", "*");
 
-// allowed origin '*' to prevent cors but should not be done for production apps
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Header", "*");
-
-    next();
-});
+//     next();
+// });
 
 app.listen(process.env.PORT, () => {
         console.log('server started succcessfully at port: ', process.env.PORT);

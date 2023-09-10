@@ -1,0 +1,25 @@
+.to-do-table {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-task {
+    display: flex;
+    margin: 15px 0px;
+}
+
+.task {
+    border-radius: 10px;
+    width: 300px;
+}
+
+.add-btn {
+    background: #673ab7;
+    color: white;
+    border-radius: 10px;
+    margin: 0px 10px;
+}
